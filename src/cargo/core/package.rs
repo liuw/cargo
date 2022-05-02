@@ -112,7 +112,7 @@ impl Package {
         Package {
             inner: Rc::new(PackageInner {
                 manifest,
-                manifest_path: manifest_path.to_path_buf(),
+                manifest_path: manifest_path.to_path_buf().canonicalize().unwrap(),
             }),
         }
     }
